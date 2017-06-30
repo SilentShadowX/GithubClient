@@ -9,4 +9,5 @@ import com.kpiega.githubclient.base.BaseMvpContract
 interface MainPresenter : BaseMvpContract.BasePresenter<MainView> {
 
     fun getUserList()
+    fun loadUserByLogin(login: String)
 }

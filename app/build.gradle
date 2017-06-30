@@ -54,6 +54,8 @@ dependencies {
 
     compile "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
 
+    compile 'com.orhanobut:dialogplus:1.11@aar'
+
     compile "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
     compile "com.google.dagger:dagger:$rootProject.ext.dagger2Version"
     kapt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger2Version"

@@ -12,7 +12,7 @@ import retrofit2.http.Path
 
 interface GithubService {
 
-    @GET("users/")
+    @GET("users")
     fun fetchUsers(): Single<List<User>>
     @GET("users/{login}")
     fun fetchUserDetails(@Path("login") login: String): Single<UserDetails>

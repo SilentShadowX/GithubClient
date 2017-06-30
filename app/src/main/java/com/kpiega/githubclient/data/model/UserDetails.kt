@@ -1,7 +1,15 @@
 package com.kpiega.githubclient.data.model
 
-import com.kpiega.githubclient.data.model.Response
+import com.google.gson.annotations.SerializedName
 
-class UserDetails : Response() {
-
-}
+data class UserDetails
+constructor(
+        @SerializedName("login")
+        val login: String,
+        @SerializedName("avatar_url")
+        val avatar: String,
+        @SerializedName("email")
+        val email: String,
+        @SerializedName("location")
+        val location: String)
+: Response()

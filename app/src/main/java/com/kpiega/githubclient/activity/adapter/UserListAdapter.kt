@@ -14,11 +14,12 @@ import org.jetbrains.anko.sdk21.listeners.onClick
  * Created by kpiega on 30.06.2017.
  */
 
-class UserListAdapter(val userList: MutableList<User>, val listener: OnUserListDetailListener)
+class UserListAdapter(var userList: MutableList<User>, val listener: OnUserListDetailListener)
     : RecyclerView.Adapter<UserRowViewHolder>() {
 
+
     override fun onBindViewHolder(holder: UserRowViewHolder?, position: Int) {
-        holder?.bind(userList.get(position))
+            holder?.bind(userList.get(position))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): UserRowViewHolder {
@@ -27,6 +28,11 @@ class UserListAdapter(val userList: MutableList<User>, val listener: OnUserListD
     }
 
     override fun getItemCount(): Int = userList.size
+
+    fun setList(list: MutableList<User>) {
+        this.userList = list
+        notifyDataSetChanged()
+    }
 
 }
 
