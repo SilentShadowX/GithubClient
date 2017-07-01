@@ -32,7 +32,7 @@ class MainPresenterImpl
                     }
 
                     override fun onError(e: Throwable?) {
-                        Timber.d(e?.message)
+                        view?.showMessage(e?.message!!)
                     }
 
                 })
@@ -64,7 +64,7 @@ class MainPresenterImpl
     }
 
     override fun detachView() {
-        disposable.dispose()
+        disposable.clear()
         this.view = null
     }
 
