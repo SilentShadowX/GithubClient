@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GithubClient</string>
+    <string name="title_users_activity">Users</string>
+    <string name="hint_tap">Tap to refresh</string>
 </resources>

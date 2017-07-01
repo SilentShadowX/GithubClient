@@ -1,9 +1,8 @@
 package com.kpiega.githubclient
 
-//import com.kpiega.githubclient.di.DaggerAppComponent
 import com.kpiega.githubclient.di.DaggerAppComponent
 import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import dagger.android.support.DaggerApplication
 
 /**
  * Created by kpiega on 30.06.2017.

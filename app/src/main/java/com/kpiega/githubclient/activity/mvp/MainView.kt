@@ -12,5 +12,4 @@ interface MainView: BaseMvpContract.BaseView {
 
     fun putUserList(list: MutableList<User>)
     fun showDetailsDialog(details: UserDetails)
-
 }

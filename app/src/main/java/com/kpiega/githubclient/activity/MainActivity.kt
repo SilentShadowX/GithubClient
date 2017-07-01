@@ -1,7 +1,9 @@
 package com.kpiega.githubclient.activity
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.kpiega.githubclient.R
 import com.kpiega.githubclient.activity.adapter.OnUserListDetailListener
 import com.kpiega.githubclient.activity.adapter.UserListAdapter

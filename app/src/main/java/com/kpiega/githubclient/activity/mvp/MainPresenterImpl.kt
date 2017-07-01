@@ -6,6 +6,7 @@ import com.kpiega.githubclient.data.model.UserDetails
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import timber.log.Timber
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 /**
@@ -24,7 +25,6 @@ class MainPresenterImpl
                 manager.fetchUsers(object : DisposableSingleObserver<List<User>>() {
 
                     override fun onSuccess(t: List<User>?) {
-                        Timber.d("List!")
                         t?.let {
                             view?.putUserList(t as MutableList<User>)
                         }
@@ -32,7 +32,13 @@ class MainPresenterImpl
                     }
 
                     override fun onError(e: Throwable?) {
-                        view?.showMessage(e?.message!!)
+                        when (e) {
+                            is UnknownHostException -> {
+                                view?.showMessage("Check internet connection!")
+
+                            }
+                            else -> Timber.d(e?.message)
+                        }
                     }
 
                 })
@@ -45,14 +51,18 @@ class MainPresenterImpl
                 manager.fetchUserDetails(login, object : DisposableSingleObserver<UserDetails>() {
 
                     override fun onSuccess(t: UserDetails?) {
-                        Timber.d("List!")
                         t?.let {
                             view?.showDetailsDialog(t)
                         }
                     }
 
                     override fun onError(e: Throwable?) {
-                        Timber.d(e?.message)
+                        when (e) {
+                            is UnknownHostException -> {
+                                view?.showMessage("Check internet connection!")
+                            }
+                            else -> Timber.d(e?.message)
+                        }
                     }
 
                 })

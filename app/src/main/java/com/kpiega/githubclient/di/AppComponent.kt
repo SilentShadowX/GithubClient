@@ -7,8 +7,8 @@ import com.kpiega.githubclient.di.module.InfoModule
 import com.kpiega.githubclient.di.module.RxModule
 import com.kpiega.githubclient.di.scope.ApplicationScope
 import dagger.Component
-import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 
 /**
  * Created by kpiega on 30.06.2017.
@@ -16,7 +16,7 @@ import dagger.android.AndroidInjector
 
 @ApplicationScope
 @Component(modules = arrayOf(
-        AndroidInjectionModule::class,
+        AndroidSupportInjectionModule::class,
         ActivityBindingModule::class,
         GitModule::class,
         RxModule::class,
